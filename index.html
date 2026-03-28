@@ -116,7 +116,7 @@
 
     .nav-link {
       display: grid;
-      grid-template-columns: 2rem 1fr auto;
+      grid-template-columns: 2.2rem 1fr;
       align-items: baseline;
       padding: 1.6rem 0.75rem;
       text-decoration: none;
@@ -133,9 +133,10 @@
     .nav-number {
       font-family: var(--serif);
       font-weight: 300;
-      font-size: 0.85rem;
+      font-size: 1.6rem;
       font-style: italic;
       color: var(--accent);
+      line-height: 1;
     }
 
     .nav-content {
@@ -252,15 +253,15 @@
 
     /* Responsive — fit single screen on mobile */
     @media (max-width: 480px) {
-      body { padding: 1.2rem 1.5rem; justify-content: flex-start; padding-top: 4.5rem; }
-      .header { margin-bottom: 1.8rem; }
-      .logo { font-size: 2.4rem; letter-spacing: 0.16em; }
-      .tagline { font-size: 0.75rem; }
-      .ornament { margin: 1.2rem auto 1.5rem; }
+      body { padding: 1.2rem 1.5rem; justify-content: flex-start; padding-top: 5.5rem; }
+      .header { margin-bottom: 2rem; }
+      .logo { font-size: 2.6rem; letter-spacing: 0.16em; }
+      .tagline { font-size: 0.8rem; letter-spacing: 0.4em; }
+      .ornament { margin: 1.5rem auto 1.8rem; }
       .ornament-line { width: 30px; }
       .nav-title { font-size: 1.35rem; }
       .nav-desc { font-size: 0.78rem; line-height: 1.4; }
-      .nav-link { padding: 1.1rem 0.5rem; grid-template-columns: 1.5rem 1fr auto; gap: 0.7rem; }
+      .nav-link { padding: 1.1rem 0.5rem; grid-template-columns: 2rem 1fr; gap: 0.7rem; }
       .nav-content { gap: 0.2rem; }
       .nav-badge { font-size: 0.6rem; }
       .nav-number { font-size: 0.9rem; }
@@ -291,37 +292,33 @@
               <span class="nav-title">The Daily Object</span>
               <span class="nav-desc">One remarkable design, every day.</span>
             </span>
-            <span class="nav-badge">Design <span class="nav-arrow">→</span></span>
           </a>
         </li>
         <li class="nav-item">
           <a href="https://report.sanono.xyz" class="nav-link">
             <span class="nav-number">II</span>
             <span class="nav-content">
-              <span class="nav-title">Research & Reports</span>
+              <span class="nav-title">The Deep Dive</span>
               <span class="nav-desc">Technology, design, and the forces reshaping how we build.</span>
             </span>
-            <span class="nav-badge">Analysis <span class="nav-arrow">→</span></span>
           </a>
         </li>
         <li class="nav-item">
           <a href="https://bubu.sanono.xyz" class="nav-link">
             <span class="nav-number">III</span>
             <span class="nav-content">
-              <span class="nav-title">Bubu Stories</span>
+              <span class="nav-title">The Bedtime Story</span>
               <span class="nav-desc">Illustrated bedtime tales for little dreamers.</span>
             </span>
-            <span class="nav-badge">Stories <span class="nav-arrow">→</span></span>
           </a>
         </li>
         <li class="nav-item nav-item--soon">
           <a href="#" class="nav-link">
             <span class="nav-number">IV</span>
             <span class="nav-content">
-              <span class="nav-title">Design Principles <span class="coming-soon-tag">Soon</span></span>
+              <span class="nav-title">The Design Canon <span class="coming-soon-tag">Soon</span></span>
               <span class="nav-desc">The ideas and taste that guide everything we make.</span>
             </span>
-            <span class="nav-badge">Philosophy</span>
           </a>
         </li>
       </ul>
