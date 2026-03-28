@@ -116,7 +116,7 @@
 
     .nav-link {
       display: grid;
-      grid-template-columns: 2.2rem 1fr;
+      grid-template-columns: 2.2rem 1fr auto;
       align-items: baseline;
       padding: 1.6rem 0.75rem;
       text-decoration: none;
@@ -181,19 +181,27 @@
       transform: scale(1.1);
     }
 
-    /* Arrow on hover */
+    /* Elegant arrow */
     .nav-arrow {
-      display: inline-block;
-      opacity: 0;
-      transform: translateX(-4px);
-      transition: all 0.25s ease;
-      font-size: 0.75rem;
-      color: var(--accent);
+      display: flex;
+      align-items: center;
+      align-self: center;
+      color: var(--text-light);
+      transition: all 0.3s ease;
     }
 
-    .nav-link:hover .nav-arrow {
-      opacity: 1;
-      transform: translateX(0);
+    .nav-arrow svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--text-light);
+      stroke-width: 1;
+      fill: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover .nav-arrow svg {
+      stroke: var(--accent);
+      transform: translateX(3px);
     }
 
     /* Coming soon */
@@ -261,7 +269,7 @@
       .ornament-line { width: 30px; }
       .nav-title { font-size: 1.35rem; }
       .nav-desc { font-size: 0.78rem; line-height: 1.4; }
-      .nav-link { padding: 1.1rem 0.5rem; grid-template-columns: 2rem 1fr; gap: 0.7rem; }
+      .nav-link { padding: 1.1rem 0.5rem; grid-template-columns: 2rem 1fr auto; gap: 0.7rem; }
       .nav-content { gap: 0.2rem; }
       .nav-badge { font-size: 0.6rem; }
       .nav-number { font-size: 0.9rem; }
@@ -292,6 +300,7 @@
               <span class="nav-title">The Daily Object</span>
               <span class="nav-desc">One remarkable design, every day.</span>
             </span>
+            <span class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
           </a>
         </li>
         <li class="nav-item">
@@ -301,6 +310,7 @@
               <span class="nav-title">The Deep Research</span>
               <span class="nav-desc">Technology, design, and the forces reshaping how we build.</span>
             </span>
+            <span class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
           </a>
         </li>
         <li class="nav-item">
@@ -310,6 +320,7 @@
               <span class="nav-title">The Bedtime Story</span>
               <span class="nav-desc">Illustrated bedtime tales for little dreamers.</span>
             </span>
+            <span class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
           </a>
         </li>
         <li class="nav-item nav-item--soon">
@@ -319,6 +330,7 @@
               <span class="nav-title">The Design Canon <span class="coming-soon-tag">Soon</span></span>
               <span class="nav-desc">The ideas and taste that guide everything we make.</span>
             </span>
+            <span class="nav-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
           </a>
         </li>
       </ul>
