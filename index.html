@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanono Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #f8f7f4;
+      --text: #1a1a18;
+      --text-muted: #8a8a82;
+      --text-light: #b5b5ad;
+      --border: #ddddd6;
+      --hover-bg: #f0efe9;
+      --accent: #c4a26e;
+      --serif: 'Cormorant Garamond', 'Georgia', serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0c0b;
+        --text: #e8e8e2;
+        --text-muted: #6a6a64;
+        --text-light: #444440;
+        --border: #252522;
+        --hover-bg: #161614;
+        --accent: #c4a26e;
+      }
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 3.2rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Ornament */
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2.5rem auto 3rem;
+    }
+
+    .ornament-line {
+      width: 60px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .ornament-diamond {
+      width: 6px;
+      height: 6px;
+      border: 1px solid var(--accent);
+      transform: rotate(45deg);
+    }
+
+    /* Navigation Cards */
+    .nav-list {
+      list-style: none;
+    }
+
+    .nav-item {
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+
+    .nav-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-link {
+      display: grid;
+      grid-template-columns: 2rem 1fr auto;
+      align-items: baseline;
+      padding: 1.6rem 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.25s ease;
+      gap: 1rem;
+    }
+
+    .nav-link:hover {
+      background: var(--hover-bg);
+      padding-left: 1.25rem;
+    }
+
+    .nav-number {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .nav-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .nav-title {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.55rem;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .nav-desc {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+    }
+
+    .nav-badge {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      align-self: center;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover .nav-badge {
+      color: var(--text-muted);
+    }
+
+    .nav-link:hover .nav-number {
+      transform: scale(1.1);
+    }
+
+    /* Arrow on hover */
+    .nav-arrow {
+      display: inline-block;
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: all 0.25s ease;
+      font-size: 0.75rem;
+      color: var(--accent);
+    }
+
+    .nav-link:hover .nav-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Coming soon */
+    .nav-item--soon .nav-link {
+      pointer-events: none;
+      opacity: 0.45;
+    }
+
+    .coming-soon-tag {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.12rem 0.55rem;
+      border-radius: 1px;
+      margin-left: 0.6rem;
+      vertical-align: middle;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .footer-line {
+      width: 20px;
+      height: 1px;
+      background: var(--border);
+      margin: 0 auto 1.2rem;
+    }
+
+    .footer-text {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    /* Subtle entrance animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header { animation: fadeUp 0.6s ease both; }
+    .ornament { animation: fadeUp 0.6s ease 0.1s both; }
+    .nav-item:nth-child(1) { animation: fadeUp 0.5s ease 0.15s both; }
+    .nav-item:nth-child(2) { animation: fadeUp 0.5s ease 0.22s both; }
+    .nav-item:nth-child(3) { animation: fadeUp 0.5s ease 0.29s both; }
+    .nav-item:nth-child(4) { animation: fadeUp 0.5s ease 0.36s both; }
+    .footer { animation: fadeUp 0.5s ease 0.45s both; }
+
+    /* Responsive — fit single screen on mobile */
+    @media (max-width: 480px) {
+      body { padding: 1rem 1.5rem; justify-content: flex-start; padding-top: 2rem; }
+      .header { margin-bottom: 0.8rem; }
+      .logo { font-size: 1.8rem; letter-spacing: 0.14em; }
+      .tagline { font-size: 0.6rem; }
+      .ornament { margin: 0.6rem auto 0.8rem; }
+      .ornament-line { width: 24px; }
+      .nav-title { font-size: 1.1rem; }
+      .nav-desc { font-size: 0.65rem; }
+      .nav-link { padding: 0.85rem 0.4rem; grid-template-columns: 1.2rem 1fr auto; gap: 0.5rem; }
+      .nav-content { gap: 0.15rem; }
+      .nav-badge { font-size: 0.5rem; }
+      .footer { margin-top: 1.2rem; }
+      .footer-line { margin-bottom: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="logo">Sanono</h1>
+      <p class="tagline">Studio</p>
+    </header>
+
+    <div class="ornament">
+      <span class="ornament-line"></span>
+      <span class="ornament-diamond"></span>
+      <span class="ornament-line"></span>
+    </div>
+
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="https://daily.sanono.xyz" class="nav-link">
+            <span class="nav-number">I</span>
+            <span class="nav-content">
+              <span class="nav-title">The Daily Object</span>
+              <span class="nav-desc">One remarkable design, every day. A curated archive of objects that shaped our world.</span>
+            </span>
+            <span class="nav-badge">Design <span class="nav-arrow">→</span></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://report.sanono.xyz" class="nav-link">
+            <span class="nav-number">II</span>
+            <span class="nav-content">
+              <span class="nav-title">Research & Reports</span>
+              <span class="nav-desc">Deep dives into technology, design systems, and the forces reshaping how we build.</span>
+            </span>
+            <span class="nav-badge">Analysis <span class="nav-arrow">→</span></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://bubu.sanono.xyz" class="nav-link">
+            <span class="nav-number">III</span>
+            <span class="nav-content">
+              <span class="nav-title">Bubu Stories</span>
+              <span class="nav-desc">Illustrated tales for little dreamers. Bedtime stories brought to life with warmth.</span>
+            </span>
+            <span class="nav-badge">Stories <span class="nav-arrow">→</span></span>
+          </a>
+        </li>
+        <li class="nav-item nav-item--soon">
+          <a href="#" class="nav-link">
+            <span class="nav-number">IV</span>
+            <span class="nav-content">
+              <span class="nav-title">Design Principles <span class="coming-soon-tag">Soon</span></span>
+              <span class="nav-desc">A living document of the ideas, rules, and taste that guide everything we make.</span>
+            </span>
+            <span class="nav-badge">Philosophy</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <footer class="footer">
+      <div class="footer-line"></div>
+      <p class="footer-text">&copy; 2026 Sanono Studio</p>
+    </footer>
+  </div>
+</body>
+</html>
