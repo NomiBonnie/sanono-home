@@ -36,9 +36,9 @@
     .calendar .blank { color:var(--light); font-family:var(--serif); font-size:1rem; font-style:italic; }
     .timeline { border-top:1px solid var(--border); }.day { display:grid; grid-template-columns:5.5rem 1fr; gap:1.4rem; padding:1.5rem .45rem; border-bottom:1px solid var(--border); }.day-number { font-family:var(--serif); font-size:1.4rem; color:var(--accent); font-style:italic; }.day-title { font-family:var(--serif); font-size:1.45rem; font-weight:500; line-height:1.2; }.day-text { margin-top:.38rem; color:var(--muted); font-size:.78rem; line-height:1.65; }
     .daily-details { margin-top:4.5rem; border-top:1px solid var(--border); }.detail-day { padding:2.4rem 0; border-bottom:1px solid var(--border); }.detail-map { display:block; width:min(100%,620px); height:auto; max-height:none; margin:1.3rem auto 1.7rem; border:1px solid var(--border); filter:saturate(.88) contrast(.98); }.detail-head { display:flex; align-items:baseline; gap:.85rem; }.detail-day-number { font-family:var(--serif); font-size:1.55rem; color:var(--accent); font-style:italic; }.detail-day h2 { font-family:var(--serif); font-size:2rem; font-weight:500; }.detail-summary { margin:.55rem 0 1.25rem 2.9rem; color:var(--muted); font-size:1.05rem; line-height:1.8; }.stops { margin-left:2.9rem; border-top:1px solid var(--border); }.stop { display:grid; grid-template-columns:5.2rem 1fr auto; gap:1rem; align-items:baseline; padding:1.05rem 0; border-bottom:1px solid var(--border); font-size:1rem; }.stop:last-child { border-bottom:0; }.stop-time { color:var(--muted); font-size:.82rem; letter-spacing:.05em; }.stop-name { color:var(--text); font-weight:400; }.stop-duration { color:var(--accent); font-family:var(--serif); font-size:1.25rem; font-style:italic; white-space:nowrap; }.stop-note { grid-column:2 / 4; margin-top:-.55rem; color:var(--muted); font-size:.94rem; line-height:1.8; }
-    .principles { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--border); margin-top:4.5rem; }.principle { min-height:155px; padding:1.5rem; border-right:1px solid var(--border); }.principle:last-child { border:none; }.principle h3 { font-family:var(--serif); font-weight:500; font-size:1.3rem; }.principle p { margin-top:.5rem;color:var(--muted);font-size:.72rem;line-height:1.6; }
+    .attractions { margin-top:4.5rem; border-top:1px solid var(--border); }.attraction { padding:2.35rem 0; border-bottom:1px solid var(--border); }.attraction h3 { font-family:var(--serif); font-size:2rem; font-weight:500; line-height:1.2; }.attraction-meta { margin:.4rem 0 1rem; color:var(--accent); font-size:.78rem; letter-spacing:.08em; }.attraction p { color:var(--muted); font-size:1.04rem; line-height:1.9; max-width:760px; }.attraction strong { color:var(--text); font-weight:500; }.principles { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--border); margin-top:4.5rem; }.principle { min-height:155px; padding:1.5rem; border-right:1px solid var(--border); }.principle:last-child { border:none; }.principle h3 { font-family:var(--serif); font-weight:500; font-size:1.3rem; }.principle p { margin-top:.5rem;color:var(--muted);font-size:.72rem;line-height:1.6; }
     footer { text-align:center;margin:4rem 0 1rem;color:var(--light);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase; }
-    @media (max-width:600px) { body{padding:1.3rem;font-size:17px}.container{max-width:100%}header{padding:3.6rem 0 2.6rem}.hero-image{aspect-ratio:1.45/1}.calendar-wrap{margin-left:-1.3rem;margin-right:-1.3rem;border-left:0;border-right:0}.day{grid-template-columns:4rem 1fr;gap:.8rem;padding:1.25rem 0}.detail-map{width:100%;height:auto}.detail-summary,.stops{margin-left:0}.detail-summary{font-size:1rem}.stop{grid-template-columns:4.1rem 1fr auto;gap:.55rem;font-size:.98rem}.stop-note{font-size:.92rem}.principles{grid-template-columns:1fr}.principle{min-height:auto;border-right:0;border-bottom:1px solid var(--border)}.principle:last-child{border-bottom:0} }
+    @media (max-width:600px) { body{padding:1.3rem;font-size:17px}.container{max-width:100%}header{padding:3.6rem 0 2.6rem}.hero-image{aspect-ratio:1.45/1}.calendar-wrap{margin-left:-1.3rem;margin-right:-1.3rem;border-left:0;border-right:0}.day{grid-template-columns:4rem 1fr;gap:.8rem;padding:1.25rem 0}.detail-map{width:100%;height:auto}.detail-summary,.stops{margin-left:0}.detail-summary{font-size:1rem}.stop{grid-template-columns:4.1rem 1fr auto;gap:.55rem;font-size:.98rem}.stop-note{font-size:.92rem}.attraction h3{font-size:1.8rem}.attraction p{font-size:1rem;line-height:1.85}.principles{grid-template-columns:1fr}.principle{min-height:auto;border-right:0;border-bottom:1px solid var(--border)}.principle:last-child{border-bottom:0} }
   </style>
 </head>
 <body>
@@ -176,6 +176,49 @@
           <div class="stop"><span class="stop-time">上午</span><span class="stop-name">齐齐哈尔出发，返回哈尔滨</span><span class="stop-duration">约 3h</span><span class="stop-note">返程日的原则是“宁可早一点，也不要赶一点”。早餐后直接上路，中途按需要短暂停车；不安排龙沙公园、动物园或购物。这样遇到降温、雨雪、堵车、孩子临时不舒服或还车排队时，行程仍有缓冲。</span></div>
           <div class="stop"><span class="stop-time">下午</span><span class="stop-name">还车、机场与登机</span><span class="stop-duration">预留 2–3h</span><span class="stop-note">抵达哈尔滨后优先完成还车，再进机场办理行李与登机。深圳、长沙两组家人可以分别按航班出发，不必为了同一班飞机增加等待或绕行。若航班较晚，只在机场附近或航站楼内轻松用餐，不再增加城市景点。</span></div>
         </div>
+      </article>
+    </section>
+    <section class="attractions">
+      <p class="section-label" style="margin-top:2rem;">重点景区介绍 · 给爷爷奶奶看</p>
+      <article class="attraction">
+        <h3>圣·索菲亚教堂</h3>
+        <p class="attraction-meta">哈尔滨最具代表性的城市地标 · 建议停留约 1–1.5 小时</p>
+        <p>圣·索菲亚教堂是一座红砖砌成、拥有绿色洋葱形穹顶的拜占庭风格建筑，是哈尔滨最容易辨认的城市名片。它最值得看的不是“赶着进馆”，而是站在广场上慢慢欣赏整体外形：圆顶、钟楼、砖墙和细致的线条，能一眼看出哈尔滨与南方城市不同的气质。广场平坦、周边有座椅，适合老人短暂停留、全家合影。建议上午到达，光线柔和，人也相对从容；走累了随时坐车前往中央大街，不必在这里久站。</p>
+      </article>
+      <article class="attraction">
+        <h3>中央大街与防洪纪念塔</h3>
+        <p class="attraction-meta">百年石街与松花江城市客厅 · 建议合计停留约 2.5 小时</p>
+        <p>中央大街铺着百年面包石，两侧保留了不同年代的欧式建筑，是哈尔滨最适合慢慢走、慢慢看的地方。它不需要赶完全部长度：从索菲亚方向进入，挑一段石街散步、看看橱窗、找一家暖和的店坐下就足够。走到江边的防洪纪念塔，视野会忽然打开，松花江、江风和远处江北建筑让人感受到哈尔滨的大尺度。防洪纪念塔本身纪念城市抗洪历史，适合留一张全家照。老人以平路慢走为主，风大时缩短江边时间即可。</p>
+      </article>
+      <article class="attraction">
+        <h3>中华巴洛克历史文化街区</h3>
+        <p class="attraction-meta">老道外的闯关东记忆与东北烟火 · 建议停留约 1.5–2 小时</p>
+        <p>中华巴洛克在老道外，不同于中央大街的“欧洲感”，这里展示的是老哈尔滨华商、闯关东移民和市井生活。建筑外立面有巴洛克式的花纹与弧线，院落和砖雕却带着中国传统图案，是中西合璧的老街区。对爷爷奶奶来说，这里最有意思的是“有历史也有生活”：看看旧建筑、慢逛一两条街，再坐下来吃熏酱、锅包肉或老字号东北菜。傍晚灯亮后氛围更好，但不需要深走巷子，主街慢慢逛、吃完饭回酒店即可。</p>
+      </article>
+      <article class="attraction">
+        <h3>东北虎林园</h3>
+        <p class="attraction-meta">世界最大的东北虎繁育基地之一 · 建议停留约 1–1.5 小时</p>
+        <p>东北虎林园最大的优点是<strong>多数观赏在车上完成</strong>，对老人十分友好。大家坐观光车进入散放区，可以较近距离看到东北虎、白虎、狮虎兽等大型猫科动物，少量步行区再根据体力决定是否下车。它不仅是看老虎，也能让咘咘理解“东北为什么有这样的大猫”：东北虎原本生活在寒冷森林，体型大、毛色厚，秋末天气凉爽时往往比夏天更愿意活动。全程不长，不建议选择过度刺激的项目，安静坐车看虎、拍照、听讲解就足够。</p>
+      </article>
+      <article class="attraction">
+        <h3>梦幻冰雪馆</h3>
+        <p class="attraction-meta">室内版冰雪体验 · 建议停留约 1.5–2 小时 · 需确认当季开放</p>
+        <p>梦幻冰雪馆可以理解为“室内版的冰雪大世界”：在大型室外冰雪大世界尚未开园的10月底，让大家先看到真正的冰雕、冰雪建筑和北方冬天的质感。它尤其适合带老人和孩子，因为不用在江边长时间吹风，也不需要在夜里排队。重点是看冰雪场景、拍家庭照片、让咘咘感受“冰城”最直观的一面，不必追求所有互动项目。由于它的开放与当季室外园区筹备有关，出发前必须确认营业日期与闭馆时间；若未开放，就把下午留给太阳岛或酒店休息。</p>
+      </article>
+      <article class="attraction">
+        <h3>哈尔滨极地公园</h3>
+        <p class="attraction-meta">企鹅、白鲸与室内演出 · 建议安排完整一天</p>
+        <p>哈尔滨极地公园是本次最适合咘咘、也最让老人省心的亲子景点。园内主要看企鹅、白鲸、海象等极地动物，并有固定时段的表演和互动内容。它适合安排一天，不是因为走路多，而是因为可以围绕节目单慢慢看：上午先看最重要的白鲸或企鹅表演，中午在园内或附近吃饭，咘咘午睡后再补看下午场。室内有暖气、座位、洗手间，天气冷或下雨也不影响。建议把节目时间作为当天主线，宁可少看一两个展区，也不要错过最想看的演出。</p>
+      </article>
+      <article class="attraction">
+        <h3>伏尔加庄园</h3>
+        <p class="attraction-meta">阿什河畔俄式文化庄园 · 建议安排约 6 小时</p>
+        <p>伏尔加庄园在哈尔滨东郊阿什河畔，是以俄罗斯文化为主题的庄园式景区。它和中央大街不同：中央大街是城市里的建筑街区，伏尔加则更像一座可以慢慢坐车游览的俄式小镇，有教堂、艺术宫、民俗园、套娃城堡和河畔景观。老人可以利用园内摆渡车减少步行，咘咘则能看套娃城堡、马房或鹿苑等互动项目。深秋去时不把它当作水上乐园，而以建筑、展馆和亲子小互动为主。当天开放项目可能随天气调整，提前确认后挑两三项重点体验即可，不必走遍全园。</p>
+      </article>
+      <article class="attraction">
+        <h3>扎龙生态旅游区</h3>
+        <p class="attraction-meta">丹顶鹤故乡与芦苇湿地 · 建议停留约 3 小时</p>
+        <p>扎龙是齐齐哈尔最值得专程去的地方，也是全国知名的丹顶鹤繁殖栖息湿地。这里最打动人的不是某一栋建筑，而是大片芦苇、开阔天空和丹顶鹤野化放飞的瞬间。安排时一定以景区当天公布的放飞场次为中心，提前到观鹤台等待；其他时间只走最平缓的栈道、坐摆渡车即可。对爷爷奶奶来说，重点是看鹤、看湿地，不必挑战长距离步行；对咘咘来说，鹤从芦苇后飞起会比在普通动物园看鸟更有记忆。秋末风大，请带帽子、围巾和保温杯。</p>
       </article>
     </section>
     <section style="margin-top:4.5rem;">
