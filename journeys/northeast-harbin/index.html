@@ -33,9 +33,10 @@
     .day-name { display:block; font-family:var(--serif); font-size:1.2rem; font-weight:500; line-height:1; }.day-note { display:block; margin-top:.28rem; color:var(--light); font-size:.55rem; letter-spacing:.11em; text-transform:uppercase; }
     .calendar .blank { color:var(--light); font-family:var(--serif); font-size:1rem; font-style:italic; }
     .timeline { border-top:1px solid var(--border); }.day { display:grid; grid-template-columns:5.5rem 1fr; gap:1.4rem; padding:1.5rem .45rem; border-bottom:1px solid var(--border); }.day-number { font-family:var(--serif); font-size:1.4rem; color:var(--accent); font-style:italic; }.day-title { font-family:var(--serif); font-size:1.45rem; font-weight:500; line-height:1.2; }.day-text { margin-top:.38rem; color:var(--muted); font-size:.78rem; line-height:1.65; }
+    .daily-details { margin-top:4.5rem; border-top:1px solid var(--border); }.detail-day { padding:2.1rem 0; border-bottom:1px solid var(--border); }.detail-head { display:flex; align-items:baseline; gap:.85rem; }.detail-day-number { font-family:var(--serif); font-size:1.35rem; color:var(--accent); font-style:italic; }.detail-day h2 { font-family:var(--serif); font-size:1.7rem; font-weight:500; }.detail-summary { margin:.45rem 0 1.1rem 2.7rem; color:var(--muted); font-size:.76rem; line-height:1.6; }.stops { margin-left:2.7rem; border-top:1px solid var(--border); }.stop { display:grid; grid-template-columns:4.8rem 1fr auto; gap:1rem; align-items:baseline; padding:.85rem 0; border-bottom:1px solid var(--border); font-size:.78rem; }.stop:last-child { border-bottom:0; }.stop-time { color:var(--muted); font-size:.65rem; letter-spacing:.07em; }.stop-name { color:var(--text); }.stop-duration { color:var(--accent); font-family:var(--serif); font-size:1rem; font-style:italic; white-space:nowrap; }.stop-note { grid-column:2 / 4; margin-top:-.55rem; color:var(--muted); font-size:.68rem; line-height:1.55; }
     .principles { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--border); margin-top:4.5rem; }.principle { min-height:155px; padding:1.5rem; border-right:1px solid var(--border); }.principle:last-child { border:none; }.principle h3 { font-family:var(--serif); font-weight:500; font-size:1.3rem; }.principle p { margin-top:.5rem;color:var(--muted);font-size:.72rem;line-height:1.6; }
     footer { text-align:center;margin:4rem 0 1rem;color:var(--light);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase; }
-    @media (max-width:600px) { body{padding:1.3rem}.container{max-width:100%}header{padding:4.5rem 0 3rem}.calendar-wrap{margin-left:-1.3rem;margin-right:-1.3rem;border-left:0;border-right:0}.day{grid-template-columns:4rem 1fr;gap:.8rem;padding:1.25rem 0}.principles{grid-template-columns:1fr}.principle{min-height:auto;border-right:0;border-bottom:1px solid var(--border)}.principle:last-child{border-bottom:0} }
+    @media (max-width:600px) { body{padding:1.3rem}.container{max-width:100%}header{padding:4.5rem 0 3rem}.calendar-wrap{margin-left:-1.3rem;margin-right:-1.3rem;border-left:0;border-right:0}.day{grid-template-columns:4rem 1fr;gap:.8rem;padding:1.25rem 0}.detail-summary,.stops{margin-left:0}.stop{grid-template-columns:3.8rem 1fr auto;gap:.55rem}.principles{grid-template-columns:1fr}.principle{min-height:auto;border-right:0;border-bottom:1px solid var(--border)}.principle:last-child{border-bottom:0} }
   </style>
 </head>
 <body>
@@ -65,6 +66,48 @@
           </tbody>
         </table>
       </div>
+    </section>
+    <section class="daily-details">
+      <p class="section-label" style="margin-top:2rem;">每日行程 · 初版草案</p>
+      <article class="detail-day">
+        <div class="detail-head"><span class="detail-day-number">周日</span><h2>欧陆哈尔滨与老道外</h2></div>
+        <p class="detail-summary">上午晚一点出发；咘咘午睡后，再从道里走向道外。全程按片区推进，不来回折返。</p>
+        <div class="stops">
+          <div class="stop"><span class="stop-time">10:00</span><span class="stop-name">圣·索菲亚教堂与广场</span><span class="stop-duration">约 1.5h</span><span class="stop-note">看建筑、广场拍照，不赶进多个展馆。</span></div>
+          <div class="stop"><span class="stop-time">11:30</span><span class="stop-name">中央大街慢走</span><span class="stop-duration">约 1.5h</span><span class="stop-note">沿街看建筑、找午餐；走累随时打车回酒店。</span></div>
+          <div class="stop"><span class="stop-time">13:00</span><span class="stop-name">回酒店午餐与午睡</span><span class="stop-duration">约 2.5h</span><span class="stop-note">咘咘午睡；老人可在酒店休息，不安排景点。</span></div>
+          <div class="stop"><span class="stop-time">15:30</span><span class="stop-name">防洪纪念塔与松花江边</span><span class="stop-duration">约 1h</span><span class="stop-note">短距离散步、看江景，天气冷可直接跳过。</span></div>
+          <div class="stop"><span class="stop-time">17:00</span><span class="stop-name">中华巴洛克历史文化街区</span><span class="stop-duration">约 1.5h</span><span class="stop-note">老道外建筑与市井氛围；直接在这里吃晚饭、看夜景。</span></div>
+        </div>
+      </article>
+      <article class="detail-day">
+        <div class="detail-head"><span class="detail-day-number">周一</span><h2>东北虎与室内冰雪</h2></div>
+        <p class="detail-summary">松北一条线。虎林园完整游览约一小时，午睡后再尝试室内冰雪体验。</p>
+        <div class="stops">
+          <div class="stop"><span class="stop-time">10:00</span><span class="stop-name">东北虎林园</span><span class="stop-duration">约 1–1.5h</span><span class="stop-note">以观光车看虎为主，少走路。</span></div>
+          <div class="stop"><span class="stop-time">12:00</span><span class="stop-name">松北午餐与咘咘午睡</span><span class="stop-duration">约 2.5h</span><span class="stop-note">优先车上或酒店休息；不赶下一站。</span></div>
+          <div class="stop"><span class="stop-time">15:30</span><span class="stop-name">室内冰雪体验</span><span class="stop-duration">约 1.5–2h</span><span class="stop-note">梦幻冰雪馆待确认当季开放；不开放则直接回酒店。</span></div>
+        </div>
+      </article>
+      <article class="detail-day">
+        <div class="detail-head"><span class="detail-day-number">周二</span><h2>极地动物与江北夜景</h2></div>
+        <p class="detail-summary">以极地公园为当天唯一主项目；午睡后只保留一个轻松的江北外观或夜景点。</p>
+        <div class="stops">
+          <div class="stop"><span class="stop-time">10:00</span><span class="stop-name">哈尔滨极地公园</span><span class="stop-duration">约 3h</span><span class="stop-note">优先企鹅、白鲸和表演；按当天节目单安排，不追求玩到闭园。</span></div>
+          <div class="stop"><span class="stop-time">13:00</span><span class="stop-name">午餐与午睡</span><span class="stop-duration">约 2.5h</span><span class="stop-note">咘咘休息；老人可回酒店或在附近休息。</span></div>
+          <div class="stop"><span class="stop-time">16:00</span><span class="stop-name">太阳岛周边或哈尔滨大剧院外观</span><span class="stop-duration">约 1h</span><span class="stop-note">二选一轻松散步；天气不好则跳过。</span></div>
+        </div>
+      </article>
+      <article class="detail-day">
+        <div class="detail-head"><span class="detail-day-number">周三</span><h2>伏尔加庄园</h2></div>
+        <p class="detail-summary">东郊单独一天。园区大，不和其他城区景点混排；以摆渡车和展馆为主，按开放项目取舍。</p>
+        <div class="stops">
+          <div class="stop"><span class="stop-time">10:00</span><span class="stop-name">前往伏尔加庄园</span><span class="stop-duration">约 50min</span><span class="stop-note">市中心至庄园约40–50分钟，建议整天只做这一处。</span></div>
+          <div class="stop"><span class="stop-time">11:00</span><span class="stop-name">建筑、展馆与摆渡车慢游</span><span class="stop-duration">约 2h</span><span class="stop-note">优先教堂、艺术宫、民俗园等室内外结合项目。</span></div>
+          <div class="stop"><span class="stop-time">13:00</span><span class="stop-name">园内午餐与午睡</span><span class="stop-duration">约 2h</span><span class="stop-note">咘咘可在推车或车上睡；老人看展、喝咖啡或休息。</span></div>
+          <div class="stop"><span class="stop-time">15:00</span><span class="stop-name">套娃城堡、马房或鹿苑</span><span class="stop-duration">约 1–1.5h</span><span class="stop-note">以当日开放项目为准；若互动项目缩减，可提前回城整理行李。</span></div>
+        </div>
+      </article>
     </section>
     <section style="margin-top:4.5rem;">
       <p class="section-label">正在形成的旅行节奏</p>
