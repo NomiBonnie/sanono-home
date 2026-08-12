@@ -23,6 +23,7 @@
     .note { border:1px solid var(--border); padding:1.25rem 1.4rem; margin-bottom:3.5rem; color:var(--muted); font-size:.77rem; line-height:1.65; }.note strong { color:var(--text); font-weight:400; }
     .section-label { color:var(--muted); font-size:.63rem; letter-spacing:.2em; text-transform:uppercase; margin-bottom:1rem; }
     .calendar-wrap { overflow-x:auto; border:1px solid var(--border); -webkit-overflow-scrolling:touch; }
+    .city-map { border:1px solid var(--border); padding:1.2rem; margin-top:1.1rem; overflow:hidden; }.city-map svg{display:block;width:100%;height:auto}.map-path{fill:none;stroke:var(--border);stroke-width:1.2;stroke-dasharray:5 5}.map-river{fill:none;stroke:var(--accent);stroke-width:2;opacity:.7}.map-zone{fill:var(--bg);stroke:var(--border);stroke-width:1}.map-zone-title{fill:var(--text);font-family:var(--serif);font-size:17px}.map-zone-text{fill:var(--muted);font-family:var(--sans);font-size:9px}.map-dot{fill:var(--accent)}.map-caption{margin-top:.8rem;color:var(--muted);font-size:.7rem;line-height:1.55;text-align:center}
     .calendar { width:100%; min-width:790px; border-collapse:collapse; table-layout:fixed; }
     .calendar th, .calendar td { border-right:1px solid var(--border); border-bottom:1px solid var(--border); }
     .calendar tr:last-child td { border-bottom:0; }.calendar th:last-child, .calendar td:last-child { border-right:0; }
@@ -50,6 +51,25 @@
     <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
     <p class="note"><strong>正在规划。</strong> 这次家庭旅行围绕深秋出发、轻松节奏、四位老人和咘咘展开。具体日期、路线与住宿会一起慢慢定下来，再成为最终行程。</p>
     <section>
+      <p class="section-label">哈尔滨行程地图 · 初版</p>
+      <div class="city-map">
+        <svg viewBox="0 0 760 245" role="img" aria-label="哈尔滨行程区域示意图">
+          <path class="map-river" d="M35 125 C170 88, 290 157, 430 118 S640 86, 735 121"/>
+          <text x="350" y="110" text-anchor="middle" class="map-zone-text" style="fill:var(--accent);font-size:11px">松花江</text>
+          <path class="map-path" d="M157 184 C255 198, 332 199, 424 183 M520 178 C578 183, 637 170, 679 147 M269 57 C363 68, 464 63, 538 51"/>
+          <rect class="map-zone" x="42" y="145" width="172" height="70" rx="2"/>
+          <circle class="map-dot" cx="59" cy="162" r="3"/><text class="map-zone-title" x="70" y="167">道里 · 道外</text><text class="map-zone-text" x="59" y="187">索菲亚 · 中央大街</text><text class="map-zone-text" x="59" y="201">防洪纪念塔 · 巴洛克</text>
+          <rect class="map-zone" x="274" y="145" width="188" height="70" rx="2"/>
+          <circle class="map-dot" cx="291" cy="162" r="3"/><text class="map-zone-title" x="302" y="167">松北 · 江北</text><text class="map-zone-text" x="291" y="187">虎林园 · 极地公园</text><text class="map-zone-text" x="291" y="201">梦幻冰雪馆 · 索道返程</text>
+          <rect class="map-zone" x="522" y="145" width="188" height="70" rx="2"/>
+          <circle class="map-dot" cx="539" cy="162" r="3"/><text class="map-zone-title" x="550" y="167">香坊东郊</text><text class="map-zone-text" x="539" y="187">伏尔加庄园</text><text class="map-zone-text" x="539" y="201">整日慢游 · 不串线</text>
+          <rect class="map-zone" x="252" y="18" width="230" height="54" rx="2"/>
+          <circle class="map-dot" cx="269" cy="35" r="3"/><text class="map-zone-title" x="280" y="40">平房区</text><text class="map-zone-text" x="269" y="59">731陈列馆 · 周三备选</text>
+        </svg>
+        <p class="map-caption">以区域分天：老城、江北、东郊各自成线，减少来回折返。示意图非精确导航地图。</p>
+      </div>
+    </section>
+    <section style="margin-top:4.5rem;">
       <p class="section-label">行程总览 · 待一起填写</p>
       <div class="calendar-wrap">
         <table class="calendar" aria-label="东北之旅行程总览">
