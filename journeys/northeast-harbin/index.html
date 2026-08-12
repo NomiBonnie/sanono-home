@@ -22,10 +22,20 @@
     .ornament { display:flex;justify-content:center;align-items:center;gap:1rem;margin:0 auto 3.5rem; }.line{width:60px;height:1px;background:var(--border)}.diamond{width:6px;height:6px;border:1px solid var(--accent);transform:rotate(45deg)}
     .note { border:1px solid var(--border); padding:1.25rem 1.4rem; margin-bottom:3.5rem; color:var(--muted); font-size:.77rem; line-height:1.65; }.note strong { color:var(--text); font-weight:400; }
     .section-label { color:var(--muted); font-size:.63rem; letter-spacing:.2em; text-transform:uppercase; margin-bottom:1rem; }
+    .calendar-wrap { overflow-x:auto; border:1px solid var(--border); -webkit-overflow-scrolling:touch; }
+    .calendar { width:100%; min-width:790px; border-collapse:collapse; table-layout:fixed; }
+    .calendar th, .calendar td { border-right:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .calendar tr:last-child td { border-bottom:0; }.calendar th:last-child, .calendar td:last-child { border-right:0; }
+    .calendar th { height:50px; padding:.7rem .5rem; color:var(--muted); font-size:.59rem; font-weight:300; letter-spacing:.11em; text-transform:uppercase; text-align:center; }
+    .calendar th:first-child { width:118px; text-align:left; padding-left:1rem; }
+    .calendar td { height:72px; padding:.55rem .5rem; vertical-align:top; background:var(--bg); }
+    .calendar td:first-child { padding:.75rem 1rem; vertical-align:middle; background:var(--hover); }
+    .day-name { display:block; font-family:var(--serif); font-size:1.2rem; font-weight:500; line-height:1; }.day-note { display:block; margin-top:.28rem; color:var(--light); font-size:.55rem; letter-spacing:.11em; text-transform:uppercase; }
+    .calendar .blank { color:var(--light); font-family:var(--serif); font-size:1rem; font-style:italic; }
     .timeline { border-top:1px solid var(--border); }.day { display:grid; grid-template-columns:5.5rem 1fr; gap:1.4rem; padding:1.5rem .45rem; border-bottom:1px solid var(--border); }.day-number { font-family:var(--serif); font-size:1.4rem; color:var(--accent); font-style:italic; }.day-title { font-family:var(--serif); font-size:1.45rem; font-weight:500; line-height:1.2; }.day-text { margin-top:.38rem; color:var(--muted); font-size:.78rem; line-height:1.65; }
     .principles { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--border); margin-top:4.5rem; }.principle { min-height:155px; padding:1.5rem; border-right:1px solid var(--border); }.principle:last-child { border:none; }.principle h3 { font-family:var(--serif); font-weight:500; font-size:1.3rem; }.principle p { margin-top:.5rem;color:var(--muted);font-size:.72rem;line-height:1.6; }
     footer { text-align:center;margin:4rem 0 1rem;color:var(--light);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase; }
-    @media (max-width:600px) { body{padding:1.3rem}.container{max-width:100%}header{padding:4.5rem 0 3rem}.day{grid-template-columns:4rem 1fr;gap:.8rem;padding:1.25rem 0}.principles{grid-template-columns:1fr}.principle{min-height:auto;border-right:0;border-bottom:1px solid var(--border)}.principle:last-child{border-bottom:0} }
+    @media (max-width:600px) { body{padding:1.3rem}.container{max-width:100%}header{padding:4.5rem 0 3rem}.calendar-wrap{margin-left:-1.3rem;margin-right:-1.3rem;border-left:0;border-right:0}.day{grid-template-columns:4rem 1fr;gap:.8rem;padding:1.25rem 0}.principles{grid-template-columns:1fr}.principle{min-height:auto;border-right:0;border-bottom:1px solid var(--border)}.principle:last-child{border-bottom:0} }
   </style>
 </head>
 <body>
@@ -39,6 +49,24 @@
     <div class="ornament"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
     <p class="note"><strong>正在规划。</strong> 这次家庭旅行围绕深秋出发、轻松节奏、四位老人和咘咘展开。具体日期、路线与住宿会一起慢慢定下来，再成为最终行程。</p>
     <section>
+      <p class="section-label">行程总览 · 待一起填写</p>
+      <div class="calendar-wrap">
+        <table class="calendar" aria-label="东北之旅行程总览">
+          <thead><tr><th scope="col">日期</th><th scope="col">早上</th><th scope="col">早餐</th><th scope="col">上午</th><th scope="col">中餐</th><th scope="col">下午</th><th scope="col">晚餐</th><th scope="col">晚上</th></tr></thead>
+          <tbody>
+            <tr><td><span class="day-name">周六</span><span class="day-note">出发</span></td><td class="blank">—</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td><span class="day-name">周日</span><span class="day-note">第二天</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td><span class="day-name">周一</span><span class="day-note">第三天</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td><span class="day-name">周二</span><span class="day-note">第四天</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td><span class="day-name">周三</span><span class="day-note">第五天</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td><span class="day-name">周四</span><span class="day-note">第六天</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td><span class="day-name">周五</span><span class="day-note">第七天</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td><span class="day-name">周六</span><span class="day-note">返程</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="blank">回家</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section style="margin-top:4.5rem;">
       <p class="section-label">正在形成的旅行节奏</p>
       <div class="timeline">
         <article class="day"><div class="day-number">一</div><div><h2 class="day-title">抵达哈尔滨</h2><p class="day-text">从深圳和长沙出发的家人在北方城市相聚。第一天只留给一顿热乎的晚饭和一个早早的夜晚。</p></div></article>
